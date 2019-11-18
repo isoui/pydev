@@ -102,3 +102,9 @@ return [
   }
 ```
 端口号[port]与项目dev.php配置保持一致
+
+## 2.2 数据库操作
+
+Easyswoole提供的一个全新协程安全的ORM封装。
+
+ORM数据库操作文档： https://www.easyswoole.com/Components/Orm/query.html
