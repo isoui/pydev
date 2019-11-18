@@ -109,16 +109,58 @@ Easyswoole提供的一个全新协程安全的ORM封装。
 
 ORM数据库操作文档： https://www.easyswoole.com/Components/Orm/query.html
 
-# 三、启动EasySwoole
-## 3.1 确保端口未被占用
+
+
+# 三、EasySwoole服务启动, 确保端口未被占用
+
+## 3.1 开发模式
+
+```sh
+cd /home/{USER}/dev/GrowthCloud/
+
+php easyswoole start
+
+```
+
+## 3.2 守护模式启动
 
 ```sh
 cd /home/{USER}/dev/GrowthCloud/
 
 php easyswoole start d
+
+```
+## 3.3 生产环境
+
+```sh
+cd /home/{USER}/dev/GrowthCloud/
+
+php easyswoole start produce
+
+```
+## 3.4 服务停止
+
+```sh
+cd /home/{USER}/dev/GrowthCloud/
+
+php easyswoole stop produce
+
+```
+注意，守护模式下才需要stop，不然control+c或者是终端断开就退出进程了
+
+
+## 3.5 重启服务
+
+```sh
+cd /home/{USER}/dev/GrowthCloud/
+
+php easyswoole reload 只重启task进程
+php easyswoole reload all  重启task + worker进程
+
 ```
 浏览器直接打开 http://172.31.3.232:[port]/api/user/
 
 页面输出： hello user index
 
 表示EasySwoole服务正常运行
+
