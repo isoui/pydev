@@ -18,3 +18,10 @@ EasySwoole官方文档，项目使用3.x版本
 ```sh
 php -v
 ```
+
+样例输出：
+```sh
+PHP 7.2.8 (cli) (built: Jul 24 2018 10:15:41) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+```
