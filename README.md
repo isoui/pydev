@@ -25,3 +25,24 @@ PHP 7.2.8 (cli) (built: Jul 24 2018 10:15:41) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 ```
+
+## 1.2 Nginx做反向代理
+
+* 版本要求：5.6.5+
+
+编辑`NGINX_CONFIG_DIR/nginx.conf`，增加server。
+```conf
+  server {
+        listen 80;
+        server_name dev.chatswoole.io;
+        root /home/{USER}/dev/GrowthCloud/Public;
+
+        location / {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Connection "keep-alive";
+            proxy_pass http://172.31.2.241:9500;
+        }
+  }
+```
