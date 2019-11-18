@@ -89,13 +89,6 @@ return [
     'TEMP_DIR'      => null,//临时文件存放的目录
     'LOG_DIR'       => null,//日志文件存放的目录
 
-    'CONSOLE'       => [//console控制台组件配置
-        'ENABLE'         => true,//是否开启
-        'LISTEN_ADDRESS' => '127.0.0.1',//监听地址
-        'PORT'           => 9500,//监听端口
-        'USER'           => 'root',//验权用户名
-        'PASSWORD'       => '123456'//验权用户名
-    ],
     'MYSQL' => [
         'host'          => '127.0.0.1',
         'port'          => '3306',
@@ -109,4 +102,4 @@ return [
     ],
 ];
 ```
-其中SERVER_NAME及端口号修改为独立的，方便后面开发调试
+其中SERVER_NAME及监听端口号修改为自己独立使用的，方便开发调试
