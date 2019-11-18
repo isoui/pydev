@@ -2,7 +2,7 @@
 * [二、安装步骤](#%E4%BA%8C%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4)
 * [三、启动EasySwoole](#%E4%B8%89%E5%90%AF%E5%8A%A8EasySwoole)
 
-EasySwoole官方文档: https://www.easyswoole.com/Preface/introduction.html，
+EasySwoole官方文档: https://www.easyswoole.com/Preface/introduction.html
 项目使用3.x版本
 
 # 一、准备工作
@@ -29,7 +29,6 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 
 ## 1.2 Nginx做反向代理
 
-* 版本要求：5.6.5+
 
 编辑`NGINX_CONFIG_DIR/nginx.conf`，增加server。
 ```conf
