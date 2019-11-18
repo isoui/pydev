@@ -108,3 +108,17 @@ return [
 Easyswoole提供的一个全新协程安全的ORM封装。
 
 ORM数据库操作文档： https://www.easyswoole.com/Components/Orm/query.html
+
+# 三、启动EasySwoole
+## 3.1 确保端口未被占用
+
+```sh
+cd /home/{USER}/dev/GrowthCloud/
+
+php easyswoole start d
+```
+浏览器直接打开 http://172.31.3.232:[port]/api/user/
+
+页面输出： hello user index
+
+表示EasySwoole服务正常运行
