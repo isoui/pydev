@@ -3,7 +3,6 @@
 * [三、启动EasySwoole](#%E4%B8%89%E5%90%AF%E5%8A%A8EasySwoole)
 
 EasySwoole官方文档: https://www.easyswoole.com/Preface/introduction.html
-
 项目使用3.x版本
 
 # 一、准备工作
@@ -30,7 +29,6 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 
 ## 1.2 Nginx做反向代理
 
-
 编辑`NGINX_CONFIG_DIR/nginx.conf`，增加server。
 ```conf
   server {
@@ -48,3 +46,67 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
   }
 ```
 端口号[port]与项目dev.php配置保持一致
+
+
+# 二、安装步骤
+## 2.1 GIT同步代码
+```sh
+cd ~
+git clone https://github.com/abc/apollo-build-scripts -o GrowthCloud
+```
+
+
+
+修改dev.php开发配置信息：
+```sh
+cd GrowthCloud
+vi dev.php
+```
+dev.php内容：
+```php
+<?php
+
+return [
+    'SERVER_NAME'   => "GrowthCloud",//服务名
+    'MAIN_SERVER'   => [
+        'LISTEN_ADDRESS' => '0.0.0.0',//监听地址
+        'PORT'           => 9501,//监听端口
+        'SERVER_TYPE'    => EASYSWOOLE_WEB_SERVER, //可选为 EASYSWOOLE_SERVER  EASYSWOOLE_WEB_SERVER EASYSWOOLE_WEB_SOCKET_SERVER EASYSWOOLE_REDIS_SERVER
+        'SOCK_TYPE'      => SWOOLE_TCP,//该配置项当为SERVER_TYPE值为TYPE_SERVER时有效
+        'RUN_MODEL'      => SWOOLE_PROCESS,// 默认Server的运行模式
+        'SETTING'        => [// Swoole Server的运行配置（ 完整配置可见[Swoole文档](https://wiki.swoole.com/wiki/page/274.html) ）
+            'worker_num'       => 8,//运行的  worker进程数量
+            'reload_async' => true,//设置异步重启开关。设置为true时，将启用异步安全重启特性，Worker进程会等待异步事件完成后再退出。
+            // 'task_enable_coroutine' => true,//开启后自动在onTask回调中创建协程
+            'max_wait_time'=>3
+        ],
+        'TASK'=>[
+            'workerNum'=>4,
+            'maxRunningNum'=>128,
+            'timeout'=>15
+        ]
+    ],
+    'TEMP_DIR'      => null,//临时文件存放的目录
+    'LOG_DIR'       => null,//日志文件存放的目录
+
+    'CONSOLE'       => [//console控制台组件配置
+        'ENABLE'         => true,//是否开启
+        'LISTEN_ADDRESS' => '127.0.0.1',//监听地址
+        'PORT'           => 9500,//监听端口
+        'USER'           => 'root',//验权用户名
+        'PASSWORD'       => '123456'//验权用户名
+    ],
+    'MYSQL' => [
+        'host'          => '127.0.0.1',
+        'port'          => '3306',
+        'user'          => 'root',
+        'timeout'       => '5',
+        'charset'       => 'utf8mb4',
+        'password'      => '111111',
+        'database'      => 'chat',
+        'POOL_MAX_NUM'  => '20',
+        'POOL_TIME_OUT' => '0.1',
+    ],
+];
+```
+其中SERVER_NAME及端口号修改为独立的，方便后面开发调试
