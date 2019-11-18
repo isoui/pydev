@@ -1,6 +1,6 @@
-* [一、准备工作](#准备工作)
-* [二、安装步骤](#安装步骤)
-* [三、启动EasySwoole](#启动EasySwoole)
+* [一、准备工作](#%E4%B8%80%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)
+* [二、安装步骤](#%E4%BA%8C%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4)
+* [三、启动EasySwoole](#%E4%B8%89%E5%90%AF%E5%8A%A8EasySwoole)
 
 EasySwoole官方文档: https://www.easyswoole.com/Preface/introduction.html，
 项目使用3.x版本
