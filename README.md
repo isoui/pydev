@@ -1,6 +1,6 @@
 * [一、准备工作](#%E4%B8%80%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)
 * [二、安装步骤](#%E4%BA%8C%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4)
-* [三、EasySwoole服务启动](#%E4%B8%89EasySwoole%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%2C+%E7%A1%AE%E4%BF%9D%E7%AB%AF%E5%8F%A3%E6%9C%AA%E8%A2%AB%E5%8D%A0%E7%94%A8)
+* [三、EasySwoole服务管理](#%E4%B8%89EasySwoole%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86)
 
 EasySwoole官方文档: https://www.easyswoole.com/Preface/introduction.html
 项目使用3.x版本
@@ -109,9 +109,9 @@ Easyswoole提供的一个全新协程安全的ORM封装。
 
 ORM数据库操作文档： https://www.easyswoole.com/Components/Orm/query.html
 
+# 三、EasySwoole服务管理
 
-
-# 三、EasySwoole服务启动, 确保端口未被占用
+确保端口未被占用
 
 ## 3.1 开发模式
 
