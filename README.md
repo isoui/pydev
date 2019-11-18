@@ -27,27 +27,6 @@ Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 ```
 
-## 1.2 Nginx做反向代理
-
-编辑`NGINX_CONFIG_DIR/nginx.conf`，增加server。
-```conf
-  server {
-        listen 80;
-        server_name libing.dev.growthcloud.info;
-        root /home/{USER}/dev/GrowthCloud/Public;
-
-        location / {
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header Host $host;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Connection "keep-alive";
-            proxy_pass http://127.0.0.1:[port];
-        }
-  }
-```
-端口号[port]与项目dev.php配置保持一致
-
-
 # 二、安装步骤
 ## 2.1 GIT同步代码
 ```sh
@@ -103,3 +82,23 @@ return [
 ];
 ```
 其中SERVER_NAME及监听端口号修改为自己独立使用的，方便开发调试
+
+## 2.2 Nginx做反向代理
+
+编辑`NGINX_CONFIG_DIR/nginx.conf`，增加server。
+```conf
+  server {
+        listen 80;
+        server_name libing.dev.growthcloud.info;
+        root /home/{USER}/dev/GrowthCloud/Public;
+
+        location / {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Connection "keep-alive";
+            proxy_pass http://127.0.0.1:[port];
+        }
+  }
+```
+端口号[port]与项目dev.php配置保持一致
